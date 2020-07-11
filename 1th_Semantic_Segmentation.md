@@ -7,8 +7,8 @@ Application scenario of semantic segmentation: removing objects.
 For example, a picture contains objects such as cars and people. If we consider deleting people in the picture, we can use semantic segmentation to complete the detection of human pixels, and then use other methods to remove people, such as bilinear interpolation
 
 可能用到U-net，其结构见img文件夹
-
 U-net may be used. See img folder for its structure.
+![U-net](https://github.com/Szkqwer/AI_daily_learning/blob/master/img/u-net.png)
 
 ## Tian Chen
 
