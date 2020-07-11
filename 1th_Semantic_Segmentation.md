@@ -1,5 +1,11 @@
 # 1th_Semantic_Segmentation 7.6~7.12
 ## Zekun Shi
+语义分割的应用场景:去除物体。
+例如，某张图片包含车，人等物体，若是考虑删除图片中的人，我们可以使用语义分割来完成对于人的像素点的检测，再使用其他方法去除人，如双线性插值法等等
+Application scenario of semantic segmentation: removing objects.
+For example, a picture contains objects such as cars and people. If we consider deleting people in the picture, we can use semantic segmentation to complete the detection of human pixels, and then use other methods to remove people, such as bilinear interpolation
+可能用到U-net，其结构见img文件夹
+U-net may be used. See img folder for its structure.
 
 ## Tian Chen
 
