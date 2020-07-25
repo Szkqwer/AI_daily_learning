@@ -5,5 +5,5 @@
 ### 7.13~7.19
 [2th_classification](2020.7.18/2th_classification.md)
 ### 7.20~7.26
-[2th_classification](2020.7.25/3th_detection.md)
+[3th_Object Detection](2020.7.25/3th_detection.md)
 
