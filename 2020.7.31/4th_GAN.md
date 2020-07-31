@@ -48,3 +48,19 @@ GAN的思想就是利用**博弈不断的优化生成器和判别器**从而使�
 
 ![img](https://image.jiqizhixin.com/uploads/editor/60fdc1c5-07ae-4e78-838e-a0c1c92393c1/640.png)
 
+# GAN-图像修复
+以Generative Face Completion为例
+
+https://arxiv.org/abs/1704.05838
+
+##这篇文章的模型主要由三个模块构成：Generator，Discriminator，Parsing network 具体结构见net.png,损失函数见loss.png
+###1.Generator 
+这里的 Generator 被设计为一个 autoencoder，输入不完整的图像，输出修复后的图像。这里我们使用了 VGG19的前半部分网络结构，外加2个卷积层，一个池化层，一个全链接层。decoder 和 encoder 是对称的，使用了 unpooling 层 用于放大特征图尺寸
+
+###2.判别器D
+
+如果只有一个生成器，那么生成的图片将会非常模糊，只有一个粗略的轮廓。因此，采用了两个判别器来对生成图片的细节进行完善，使得生成的图片更加真实。其中，有两个判别器：local discriminator和global discriminator。其中，局部判别器是为了让生成器生成图片中补全的部分更加真实，而整体的判别器是为了让整个生成的图片看起来更加真实。
+
+###3. Semantic Regularization 
+前面的两个部分其实就是原始GAN的变形，作者加上后面这一部分的原因是，前面生成的图片虽然整体上轮廓清晰比较真实，但是看上去却不像是人脸的图片。这里的 Parsing network 主要用于进一步完善缺失区域的生成图像的真实性。 
+
